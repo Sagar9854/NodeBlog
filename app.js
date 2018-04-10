@@ -24,6 +24,13 @@ app.locals.truncateText = function (text, length) {
   return truncatedText;
 }
 
+app.locals.isTruncated = function(text){
+	var len = text.length;
+	if(len > 200)
+		return true;
+	else return false;
+}
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
